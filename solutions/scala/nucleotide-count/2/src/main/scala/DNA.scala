@@ -1,0 +1,18 @@
+import DNA._
+
+class DNA(strand: String) {
+
+  val nucleotideCounts: Either[String, Seq[(Char, Int)]] =
+    if (strand.forall(Nucleotides.contains)) Right(
+      (Nucleotides.map(_ -> 0) ++ strand.groupBy(identity).mapValues(_.length)).toMap
+    )
+    else Left("Strand contains invalid nucleotides")
+
+}
+
+object DNA {
+
+  private final val Nucleotides = Seq('A', 'C', 'G', 'T')
+
+}
+
