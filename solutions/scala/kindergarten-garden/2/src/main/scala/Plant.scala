@@ -1,0 +1,9 @@
+object Plant extends Enumeration {
+  type Plant = Value
+
+  val Clover = Value('C')
+  val Grass = Value('G')
+  val Radishes = Value('R')
+  val Violets = Value('V')
+
+}
